@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Test Quiz - Correlation</title>
+    <!-- Load Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for better readability and centering */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .quiz-container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .question-box {
+            border: 2px solid #3b82f6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: #eff6ff;
+        }
+        .submit-link {
+            /* Style to look like a hidden submission link for the scraper */
+            font-size: 0.1px;
+            color: transparent;
+            position: absolute;
+            left: -9999px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <header class="mb-8">
+            <h1 class="text-3xl font-extrabold text-gray-800">Pipeline Functionality Test</h1>
+            <p class="text-gray-500 mt-2">This page is designed to test your scraping, file handling, and code execution stages.</p>
+        </header>
+
+        <div class="question-box mb-8">
+            <h2 class="text-xl font-bold text-blue-700 mb-4">Quiz Question</h2>
+            
+            <!-- Question text, directly scraped from your image -->
+            <p class="text-gray-700">
+                You are provided with a dataset containing marketing spend and net revenue across various campaigns in different regions.
+                <br><br>
+                **TASK:** Calculate the **Pearson correlation coefficient** between the `Marketing_Spend_USD` and `Net_Revenue_USD` columns for the **North** region only.
+                <br><br>
+                **Your final answer should be a floating-point number rounded to 4 decimal places.**
+            </p>
+        </div>
+
+        <!-- File Download Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold text-gray-700 mb-4">Required Data File</h2>
+            <a id="download-link" href="q-excel-region-correlation.csv" download class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
+                <!-- Lucide download icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                Download q-excel-region-correlation.csv
+            </a>
+            <p class="text-sm text-gray-500 mt-2">The scraper should find and download this file.</p>
+        </div>
+
+        <!-- Target Zone for Scraper -->
+        <div class="mt-12 p-4 border-t border-gray-200">
+            <h3 class="text-lg font-semibold text-red-600">Testing Endpoints (Hidden/Obscured)</h3>
+            <p class="text-sm text-gray-500">The following information is obscured to mimic a real scenario and test your scraper's heuristics.</p>
+            
+            <!-- Method A: Hidden URL in link text (Testing QuizExtractionStage) -->
+            <a class="submit-link" href="https://webhook.site/a97f8c0e-d1c9-4458-96f7-b2e04391e605">
+                Submit URL: https://webhook.site/a97f8c0e-d1c9-4458-96f7-b2e04391e605
+            </a>
+
+            <!-- Method B: Hidden Form (Testing QuizExtractionStage) -->
+            <form action="https://webhook.site/0e8ce968-d98f-4e02-b4a7-253a99c48163" method="POST" class="hidden">
+                <input type="hidden" name="dummy_field" value="test_value">
+                <button type="submit">Hidden Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // This function ensures the downloaded file is named correctly, 
+        // as if it were served by a local web server.
+        // On a real web server, the path to the CSV would just be 'q-excel-region-correlation.csv'.
+        document.getElementById('download-link').href = 'q-excel-region-correlation.csv';
+    </script>
+</body>
+</html>
