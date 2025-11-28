@@ -2,23 +2,39 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AI Similarity Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <title>AIrtGallery Question 1</title>
 </head>
+<body style="font-family: sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6;">
 
-<body>
-  <h1>AI Similarity Quiz</h1>
+  <h1>AIrtGallery – Multimodal Similarity Question</h1>
 
-  <img id="quiz-image" src="assets/image.webp">
+  <p><strong>Submit URL:</strong> https://your-hf-space.hf.space/submit</p>
 
-  <label>Text description:</label>
-  <textarea id="text-input">Análisis factorial confirmatorio en estadística</textarea>
+  <h2>Image:</h2>
+  <p>
+    <a href="data:image/webp;base64,UklGRlADAABXRUJQVlA4IEQDAADQJACdASoAAQABPxF+slOsKCQiq164KYAiCWlu4W0RG/N7/B4yXczamdiMsVh9/e66FoMSj1k7eb1nD3WKxrQVZnnQbjoEs0DnQbjoKsu1Am40yEUWJZ5z+62kRwowjnE9L3/IOg+f3W0ahtNmpn3OzrrfJn/Lrjr7GgSzPYLQSGnJ2Kg/RO7oFe+wo3tdt73L3VvcoHAa7zZqM8lVG03KV1ymkPeyAv/atVbGSkibSTG80h06NCTWoi2/QiNWmM9MJm8oqxtlNrzcGvCXBL6QxMFQ8EEOcbkQgXeQrqa/gJhT3eua4cw81XVXTSc6c74XPCO5l/7IkVb3wEyXBhsxjf24SYIoGbm85/dbSKssHX6iRWZwa8cdBVmedBmvpFZnnQbjoEs0DnQbjoKstAAA/vsboAAn4FV4Oa7a174JRv5PPn3GdXfFg1khSC0y5qE7iOPFozIqSiA3phMJxzNaZPJswRgbhyrgOVfUMBEw81q7o73sT4O6/+gSuinPhTYAU4omPvmJ4XyQdG3ys+0FNCG0Ev8nARt1+qb4bqm+IKWB7M9cE+Y6OVGgWivwAQCRnuNzrMWcK3xUu4Po9BwAXiiyJnTt2bYhKT7h94bitOxJeiFdo0JrbQ10TNQanND+My7S0UJcvmZSK+2lW1Dj8UugGzAjcwbj/hUi9fUMZCaafjqWO+5SS4X9w2F1+UILJkzbdtXDSxSV/aO+OhAdMet1eylyP/EWE3G643Y6/3g+pb3hXRfT9RjD1B5QVeeIa2MDFOJEvFvqbHohHvcE9aHI91e8KJ9+opLQKOQw0dt1rdPUPRrQR7wf9tRtr7uiUhUf9m869AviOYH2/w/Gg+2DHWGP6DeDUFlPQIBN/TBLeN8eWlr7JHyi8QOZkJH5bH0wf7sjobcf+48UG47z1UbLaCfsTNq+ZQFwOqY+b/mpzHx+ukixoY4iTzz9HRNFvCtPRCAd4ivNWuJHjwqpJYAd3pighuHihWHbYfXi9fXkEvYNIBcB+sYlu/7RBdlcaLtuznb5yE7qloORoQ7IlctAeZnAD3MYAsMArhI3Cp5Do/S4HV022/ugZnhNK4aiM6q8TTjnMVWgATMSlajzAAAAAA==' target="_blank">image</a>
+  </p>
 
-  <button id="run">Compute Similarity</button>
+  <h2>Question:</h2>
+  <p>
+    AIrtGallery is a cutting-edge digital art marketplace that uses AI to help collectors find artworks that match their interests. The platform employs multimodal AI to understand both images and text descriptions, allowing for semantic search and content-based recommendations.
+  </p>
 
-  <h2>Similarity Score:</h2>
-  <pre id="output"></pre>
+  <p><strong>Image:</strong> Tangram puzzle pieces</p>
 
-  <script src="script.js"></script>
+  <p><strong>Text description:</strong> Análisis factorial confirmatorio en estadística</p>
+
+  <p>
+    Your task is to calculate the dot product (cosine similarity) between the normalized embedding vectors of this image and text pair. The result should be a single number between -1 and 1, representing how well the text describes the image.
+  </p>
+
+  <p>
+    Use Jina AI's CLIP V2 model to generate the embeddings (use defaults: 1024 dimensional vectors with L2 normalization). Enter the final dot product (similarity score) with at least 4 decimal places.
+  </p>
+
+  <p>
+    You're testing AIrtGallery's recommendation engine. The system needs to calculate similarity scores between artworks and textual descriptions to suggest relevant pieces to collectors. Each artwork and description is converted into a normalized embedding vector (magnitude = 1), and their similarity is computed using the dot product of these vectors.
+  </p>
+
 </body>
 </html>
